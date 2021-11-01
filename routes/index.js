@@ -5,14 +5,8 @@ var ObjectId = require('mongodb').ObjectId
 
 /* GET home page. */
 router.get('/', async function (req, res) {
-  let id = req.session.user
-  let user = await db.get().collection('users').findOne({ _id: ObjectId(id) })
-  let blogs = await db.get().collection('blogs').find().sort({title:1}).toArray()
-  let newblog = blogs[3]
-  if (user) {
-    res.render('index', { blogs, user,newblog });
-  }
-  res.render('index', { blogs,newblog });
+  let blogs = await db.get().collection('blogs').find().toArray()
+  res.render('index', { blogs });
 });
 
 router.get('/about', function (req, res) {
@@ -39,7 +33,7 @@ router.post('/upload', function (req, res) {
 
 });
 
-router.get('/admin@9846', async function (req, res) {
+router.get('/admin', async function (req, res) {
   let blogs = await db.get().collection('blogs').find().toArray()
   let users = await db.get().collection('users').find().toArray()
   res.render('admin', { blogs, users });
@@ -48,13 +42,13 @@ router.get('/admin@9846', async function (req, res) {
 router.get('/delete/:id', (req, res) => {
   id = req.params.id
   db.get().collection('blogs').deleteOne({ _id: ObjectId(id) })
-  res.redirect('/admin@9846')
+  res.redirect('/admin')
 })
 
 router.get('/deleteuser/:id', (req, res) => {
   id = req.params.id
   db.get().collection('users').deleteOne({ _id: ObjectId(id) })
-  res.redirect('/admin@9846')
+  res.redirect('/admin')
 })
 
 router.get('/section/:section', async function (req, res) {

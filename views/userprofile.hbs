@@ -12,7 +12,7 @@
     </div>
 </div> --}}
 
-<h1 class="username">Posts from {{bloguser.name}}</h1>
+<h1 class="username">Posts from admin</h1>
 
 
 <div class="container ">
@@ -25,8 +25,8 @@
             <div class="text">
                 <a href="/users/blog/{{this._id}}">
                     <h5>{{this.title}}</h5>
-                    <a href="/section/{{this.section}}">
-                        <h6>{{this.section}}</h6>
+                    <a>
+                        <h6>{{this.name}}</h6>
                     </a>
                 </a>
                 {{!-- <div class="author">
@@ -226,14 +226,14 @@
         .username {
             align-self: center;
             font-size: 22px;
-            color: rgb(0, 170, 0);
+            color: rgb(0, 167, 0);
             font-weight: 600;
             margin-left: 10px;
             margin-bottom: 10px;
         }
 
         .text h6 {
-            color: rgb(0, 170, 0);
+            color: rgb(155, 155, 155);
             font-weight: 600;
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
@@ -370,6 +370,7 @@
             font-family: 'Noto Sans Malayalam', sans-serif;
             font-size: 16px;
             font-weight: 600;
+            color: black;
         }
 
         .text {
