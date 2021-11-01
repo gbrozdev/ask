@@ -1,0 +1,403 @@
+{{!-- <div class="container">
+    <div class=" home">
+        <div class="edit">
+            <div class="row name">
+                <h1>{{bloguser.name}} </h1>
+            </div>
+            <div class="row about">
+                <h2>{{bloguser.about}}</h2>
+            </div>
+            <img src="/images/{{bloguser._id}}.jpg">
+        </div>
+    </div>
+</div> --}}
+
+<h1 class="username">Posts from {{bloguser.name}}</h1>
+
+
+<div class="container ">
+
+    <div class="row">
+
+        {{#each blogs}}
+        <div class="blog-div col-12 col-md-5 ">
+            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="text">
+                <a href="/users/blog/{{this._id}}">
+                    <h5>{{this.title}}</h5>
+                    <a href="/section/{{this.section}}">
+                        <h6>{{this.section}}</h6>
+                    </a>
+                </a>
+                {{!-- <div class="author">
+                    <img src="/images/{{this.userid}}.jpg" alt="image">
+                    <h4> {{this.name}}</h4>
+                </div> --}}
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+
+<style>
+    @media only screen and (min-width: 601px) {
+        .text h6 {
+            color: rgb(0, 170, 0);
+            font-weight: 600;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .home {
+            margin-top: 40px;
+            padding: 10px;
+            padding-left: 20px;
+            border: black solid 3px;
+            border-radius: 1rem;
+            width: 80%;
+            height: 60%;
+
+        }
+
+        .home img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            object-fit: cover;
+            position: absolute;
+            top: 33%;
+            right: 28%;
+        }
+
+        .home p {
+            margin-bottom: 10px;
+        }
+
+
+        .edit {
+            margin-left: 10px;
+        }
+
+        .name {
+            align-items: center;
+        }
+
+        .about {
+            margin-top: 15px;
+            align-items: center;
+        }
+
+        .about-input {
+            font-size: 12px;
+            width: 35%;
+        }
+
+        textarea {
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 35%;
+            margin-left: 10px;
+            color: antiquewhite;
+            font-family: cursive;
+            font-size: 20px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            resize: none;
+        }
+
+        input {
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 35%;
+            margin-left: 10px;
+            color: antiquewhite;
+            font-family: cursive;
+            font-size: 20px;
+        }
+
+        .edit h1 {
+            font-size: 25px;
+            font-family: cursive;
+            color: rgb(95, 95, 95);
+            margin: 5px;
+        }
+
+        .edit h2 {
+            font-size: 20px;
+            font-family: cursive;
+            color: rgb(95, 95, 95);
+            margin: 5px;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            color: white;
+            text-decoration: none
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .author img {
+            border-radius: 100px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .text h4 {
+            font-size: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(0, 0, 0)
+        }
+
+        .text p {
+            font-family: cursive;
+            font-size: 10px;
+            color: rgb(0, 0, 0);
+            margin-top: 10px;
+        }
+
+        .text h5 {
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .text {
+            width: 70%;
+        }
+
+        .row {
+            align-items: center;
+        }
+
+        .blog-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            width: 30vw;
+            height: 18vh;
+            padding: 15px;
+            background-color: rgb(235, 235, 235);
+            margin-left: 2vw;
+            margin-right: 2vw;
+            border-radius: 0.5rem;
+        }
+
+        .blog-img {
+            width: 30%;
+            height: 15vh;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            margin-right: 5%;
+        }
+    }
+</style>
+
+<style>
+    @media only screen and (max-width: 600px) {
+        .container {
+            padding: 0;
+        }
+
+        .username {
+            align-self: center;
+            font-size: 22px;
+            color: rgb(0, 170, 0);
+            font-weight: 600;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .text h6 {
+            color: rgb(0, 170, 0);
+            font-weight: 600;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .contain {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .home {
+            margin-top: 20px;
+            padding: 10px;
+            padding-left: 20px;
+            border: black solid 3px;
+            border-radius: 1rem;
+            width: 100%;
+            height: 35vh;
+        }
+
+        .home img {
+            width: 140px;
+            height: 140px;
+            border-radius: 100px;
+            object-fit: cover;
+            position: absolute;
+            top: 24%;
+            right: 12%;
+        }
+
+        .home p {
+            margin-bottom: 10px;
+        }
+
+
+        .edit {
+            margin-left: 10px;
+        }
+
+        .name {
+            align-items: center;
+        }
+
+        .about {
+            margin-top: 15px;
+            align-items: center;
+        }
+
+        .about-input {
+            font-size: 12px;
+            width: 35%;
+        }
+
+        textarea {
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 35%;
+            margin-left: 10px;
+            color: antiquewhite;
+            font-family: cursive;
+            font-size: 20px;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            resize: none;
+        }
+
+        input {
+            text-decoration: none;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 35%;
+            margin-left: 10px;
+            color: antiquewhite;
+            font-family: cursive;
+            font-size: 20px;
+        }
+
+        .edit h1 {
+            font-size: 25px;
+            font-family: cursive;
+            color: rgb(95, 95, 95);
+            margin: 5px;
+        }
+
+        .edit h2 {
+            font-size: 20px;
+            font-family: cursive;
+            color: rgb(95, 95, 95);
+            margin: 5px;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            color: white;
+            text-decoration: none
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .author img {
+            border-radius: 100px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .text h4 {
+            font-size: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(0, 0, 0)
+        }
+
+        .text p {
+            font-family: cursive;
+            font-size: 10px;
+            color: rgb(0, 0, 0);
+            margin-top: 10px;
+        }
+
+        .text h5 {
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .text {
+            width: 70%;
+        }
+
+        .row {
+            align-items: center;
+        }
+
+        .blog-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px;
+            width: 100%;
+            height: 18%;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0.5rem;
+        }
+
+        .blog-img {
+            width: 30%;
+            height: 12vh;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            margin-right: 5%;
+        }
+    }
+</style>

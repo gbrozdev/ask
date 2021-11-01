@@ -1,0 +1,221 @@
+<div class="blog">
+    <a href="/section/{{blog.section}}">
+        <h6 class="tag-top">{{blog.section}}</h6>
+    </a>
+    <img class="mainblog-img" src="{{blog.imgurl}}">
+    <h1>{{blog.title}}</h1>
+    <a href="/users/profile/{{blog.userid}}">
+        <h2> <span>by</span> {{blog.name}}</h2>
+    </a>
+    <p>{{blog.blog}}</p>
+    <a class="insta btn btn-primary" href="{{blog.instalink}}">
+        <h4>{{blog.button}}</h4>
+    </a>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        {{#each blogs}}
+        <div class="blog-div col-12 col-md-5 ">
+            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="text">
+                <a href="/users/blog/{{this._id}}">
+                    <h5>{{this.title}}</h5>
+                </a>
+                {{!-- <a href="/section/{{this.section}}">
+                    <h6>{{this.section}}</h6>
+                </a> --}}
+                <div class="author">
+                    {{!-- <img src="/images/{{this.userid}}.jpg" alt="image"> --}}
+                    <a href="/users/profile/{{this.userid}}">
+                        <h2 style="color: rgb(0, 170, 0);"> {{this.name}}</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+<style>
+    a,
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .fab {
+        margin-left: 10px;
+    }
+
+    .insta {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .insta h4 {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+    }
+
+    .text h6 {
+        color: rgb(0, 170, 0);
+        font-weight: 400;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .mainblog-img {
+        margin-top: 8vh;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 30vh;
+        border-radius: 0.5rem;
+        object-fit: cover;
+    }
+
+    .tag-top {
+        background-color: green;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        height: 30px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.3rem;
+        margin: 10px;
+        position: absolute;
+        right: 10;
+    }
+
+    span {
+        color: #000000;
+    }
+
+    .blog {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 5vh;
+    }
+
+    .blog h1 {
+        font-size: 25px;
+        font-weight: 600;
+        font-family: 'Noto Sans Malayalam', sans-serif;
+        color: rgb(0, 0, 0);
+        margin-top: 10px;
+    }
+
+    .blog h2 {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 15px;
+        color: #ff0000;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .blog p {
+        margin-top: 20px;
+        font-weight: normal;
+        font-family: Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        background-color: #fff;
+        color: #000;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .author {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .author img {
+        border-radius: 100px;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        object-fit: cover;
+    }
+
+    .text h4 {
+        font-size: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(0, 0, 0)
+    }
+
+    .text p {
+        font-family: cursive;
+        font-size: 10px;
+        color: rgb(0, 0, 0);
+        margin-top: 10px;
+    }
+
+    .text h5 {
+        font-family: 'Noto Sans Malayalam', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .text {
+        margin-top: 10px;
+        width: 70%;
+    }
+
+    .row {
+        align-items: center;
+    }
+
+    .blog-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        width: 100%;
+        height: 18%;
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.5rem;
+    }
+
+    .blog-img {
+        width: 30%;
+        height: 12vh;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        margin-right: 5%;
+    }
+
+    .bot-div {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        position: fixed;
+        bottom: 5%;
+        right: 3%;
+        background: #000000;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 10rem;
+        border: rgb(0, 0, 0) solid 3px;
+        margin: 5px;
+        cursor: pointer;
+    }
+</style>

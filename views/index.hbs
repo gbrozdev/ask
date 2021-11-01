@@ -1,0 +1,277 @@
+
+<div class="container">
+    <div class="row ">
+        {{#each blogs}}
+        <div class="blog-div col-12 col-md-5 ">
+            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="text">
+                <a href="/users/blog/{{this._id}}">
+                    <h5>{{this.title}}</h5>
+                </a>
+                {{!-- <a href="/section/{{this.section}}">
+                    <h6>{{this.section}}</h6>
+                </a> --}}
+                <div class="author">
+                    {{!-- <img src="/images/{{this.userid}}.jpg" alt="image"> --}}
+                    <a href="/users/profile/{{this.userid}}">
+                        <h6 class="s"> {{this.name}}</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+</div>
+
+
+
+
+<style>
+    .auth-name {
+        font-weight: 600;
+    }
+</style>
+
+<style>
+    @media only screen and (min-width: 601px) {
+        .text h6 {
+            color: rgb(0, 170, 0);
+            font-weight: 600;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .author img {
+            border-radius: 100px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .text h4 {
+            font-size: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(0, 0, 0)
+        }
+
+        .text p {
+            font-family: cursive;
+            font-size: 10px;
+            color: rgb(0, 0, 0);
+            margin-top: 10px;
+        }
+
+        .text h5 {
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: black;
+        }
+
+        .text {
+            width: 70%;
+        }
+
+        .row {
+            align-items: center;
+        }
+
+        .blog-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            width: 30vw;
+            height: 18%;
+            padding: 15px;
+            background-color: rgb(235, 235, 235);
+            margin-left: 3vw;
+            margin-right: 2vw;
+            border-radius: 0.5rem;
+        }
+
+        .blog-img {
+            width: 30%;
+            height: 15vh;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            margin-right: 5%;
+        }
+
+
+
+
+        .home {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 1rem;
+            width: 100%;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .home h4 {
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            font-size: 20px;
+            margin: 5px;
+            font-weight: 600;
+        }
+
+        .homeimg {
+            width: 80%;
+            height: 50vh;
+            border-radius: 0.7rem;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+
+<style>
+    @media only screen and (max-width: 600px) {
+        .container{
+            padding: 0;
+        }
+        .text h6 {
+            color: rgb(0, 170, 0);
+            font-weight: 600;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .auth-name {
+            color: rgb(0, 170, 0);
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            color: white;
+            text-decoration: none
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .author img {
+            border-radius: 100px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .text h4 {
+            font-size: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(0, 170, 0);
+        }
+
+        .text p {
+            font-family: cursive;
+            font-size: 10px;
+            color: rgb(0, 0, 0);
+            margin-top: 10px;
+        }
+
+        .text h5 {
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: black;
+        }
+
+        .text {
+            width: 70%;
+        }
+
+        .row {
+            align-items: center;
+        }
+
+        .blog-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0px;
+            width: 100%;
+            height: 18%;
+            padding: 10px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 0.5rem;
+        }
+
+        .blog-img {
+            width: 30%;
+            height: 12vh;
+            border-radius: 0.5rem;
+            object-fit: cover;
+            margin-right: 5%;
+        }
+
+        .bot-div {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            position: fixed;
+            bottom: 3%;
+            right: 3%;
+            background-color: #0db8ec;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 10rem;
+            margin: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .home {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 1rem;
+            width: 100%;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        } 
+
+        .home h4 {
+            font-family: 'Noto Sans Malayalam', sans-serif;
+            font-size: 18px;
+            margin: 5px;
+            font-weight: 600;
+        }
+
+        .homeimg {
+            margin-bottom: 10px;
+            width: 100%;
+            height: 30vh;
+            border-radius: 0.5rem;
+            object-fit: cover;
+        }
+    }
+</style>

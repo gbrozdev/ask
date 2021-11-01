@@ -1,0 +1,105 @@
+<a href="/users/newblog" class="bot-div">
+    <h1>+</h1>
+</a>
+
+<div class="allblogs">
+    <h1>Admin Panel</h1>
+    <small>for admins use only</small>
+    {{#each blogs}}
+    <div class="blog-div">
+        <img class="admin-img" src="{{this.imgurl}}" alt="image">
+        <div class="text">
+            <a href="/users/blog/{{this._id}}">
+                <h5>{{this.title}}</h5>
+            </a>
+             <a style="font-weight: 600; color:green" href="/users/edit/{{this._id}}">Edit</a>
+            <a style="margin-left: 5px; font-weight: 600; color: red;" href="/delete/{{this._id}}">Delete</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+
+
+
+
+<style>
+    .bot-div {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        position: fixed;
+        bottom: 5%;
+        right: 3%;
+        background-color: #0db8ec;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 10rem;
+        margin: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .admin-img {
+        width: 100px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 10px;
+        border-radius: .5rem;
+    }
+
+    .allblogs {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .allblogs h1{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 800;
+    }
+
+    a,
+    a:hover {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        text-decoration: none
+    }
+    .text h5 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .text {
+        max-width: 60%;
+    }
+
+    .blog-div {
+        display: flex;
+        margin-top: 20px;
+        border-radius: 1rem;
+        width: 100%;
+        height: 18%;
+    }
+
+    .blog-divs {
+        display: flex;
+        border-radius: 1rem;
+        width: 100%;
+        height: 18%;
+    }
+
+    .blog-img {
+        width: 40%;
+        height: 100%;
+        border-radius: 1rem;
+        object-fit: cover;
+        margin-right: 5%;
+    }
+</style>

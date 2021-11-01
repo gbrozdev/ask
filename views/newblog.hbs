@@ -1,0 +1,97 @@
+<div class="container">
+
+    <form {{#if blog}} action="/users/edit/" {{else}}action="/users/newblog" {{/if}} method="post" class="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name"
+                value="admin">
+        </div>
+        <div class="form-group">
+
+            <label for="exampleInputEmail1">Blog Title</label>
+            <input type="text" class="form-control" required id="exampleInputEmail1" aria-describedby="emailHelp"
+                name="title" placeholder="Enter title...." value="{{#if blog}}{{blog.title}}{{else}}{{/if}}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Blog Content</label>
+            <textarea class="form-control" required name="blog" id="" cols="30" rows="10"
+                placeholder="Write your blog here.....">{{#if blog}}{{blog.blog}}{{else}}{{/if}}</textarea>
+        </div>
+        <input type="text" hidden class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            name="userid" value="{{user._id}}" placeholder="Enter title....">
+
+        {{#if blog}}
+        <input type="text" value="{{blog._id}}" hidden name="blogid">
+        {{/if}}
+
+        <label for="exampleInputEmail1">Image url</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="imgurl"
+            placeholder="Paste image link here...." value="{{#if blog}}{{blog.imgurl}}{{else}}{{/if}}">
+
+        <div>
+            <div class="insta">
+                <label for="exampleInputEmail1">Button Link</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="instalink" placeholder="Paste link here...."
+                    value="{{#if blog}}{{blog.instalink}}{{else}}{{/if}}">
+            </div>
+        </div>
+
+        <div>
+            <div class="insta">
+                <label for="exampleInputEmail1">Button Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="button" placeholder="Button Name"
+                    value="{{#if blog}}{{blog.button}}{{else}}{{/if}}">
+            </div>
+        </div>
+
+        <div>
+            <div class="insta">
+                <label for="exampleInputEmail1">Button Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="keywords" placeholder="type key words"
+                    value="{{#if blog}}{{blog.keywords}}{{else}}{{/if}}">
+            </div>
+        </div>
+
+        <div>
+            <label style="margin-top: 25px;" for="exampleInputEmail1">Add Tag</label>
+            <select class="m-3" name="section" style="padding: 5px; font-size: 15px; font-weight: 500;">
+                {{#if blog}}
+                <option value="{{blog.section}}">{{blog.section}}</option>
+                {{/if}}
+                <option value="Calicut University">Calicut University</option>
+                <option value="Allotment">Allotment</option>
+                <option value="Result">Result</option>
+                <option value="Pdf books ">Pdf books </option>
+                <option value="Time Table">Time Table</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-success m-3">Submit</button>
+    </form>
+
+</div>
+
+<style>
+    .insta {
+        margin-top: 20px;
+    }
+
+    .form {
+        margin-top: 5%;
+    }
+
+    input {
+        margin-top: 3%;
+    }
+
+    textarea {
+        margin-top: 3%;
+    }
+
+    label {
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+</style>
