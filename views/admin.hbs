@@ -1,29 +1,47 @@
-<a href="/users/newblog" class="bot-div">
-    <h1>+</h1>
-</a>
+<div id="main-admin-body">
 
-<div class="allblogs">
-    <h1>Admin Panel</h1>
-    <small>for admins use only</small>
-    {{#each blogs}}
-    <div class="blog-div">
-        <img class="admin-img" src="{{this.imgurl}}" alt="image">
-        <div class="text">
-            <a href="/users/blog/{{this._id}}">
-                <h5>{{this.title}}</h5>
-            </a>
-             <a style="font-weight: 600; color:green" href="/users/edit/{{this._id}}">Edit</a>
-            <a style="margin-left: 5px; font-weight: 600; color: red;" href="/delete/{{this._id}}">Delete</a>
+    <a href="/users/newblog" class="bot-div">
+        <h1>+</h1>
+    </a>
+
+    <div class="allblogs">
+        <h1>Admin Panel</h1>
+        <small>for admins use only</small>
+        {{#each blogs}}
+        <div class="blog-div">
+            <img class="admin-img" src="{{this.imgurl}}" alt="image">
+            <div class="text">
+                <a href="/users/blog/{{this._id}}">
+                    <h5>{{this.title}}</h5>
+                </a>
+                <a style="font-weight: 600; color:green" href="/users/edit/{{this._id}}">Edit</a>
+                <a style="margin-left: 5px; font-weight: 600; color: red;" href="/delete/{{this._id}}">Delete</a>
+            </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
+
 </div>
 
 
-
-
-
+<div id="password">
+    <input type="text" id="pswdinpt" name="pswdinpt">
+    <button class="btn btn-success" onclick="pswd()">Ok</button>
+</div>
+<script>
+    function pswd() {
+        let pswd = document.getElementById('pswdinpt').value
+        if (pswd === '9846') {
+            document.getElementById('main-admin-body').style.display = "block";
+            document.getElementById('password').style.display = "none";
+        }
+    }
+</script>
 <style>
+    #main-admin-body {
+        display: none;
+    }
+
     .bot-div {
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         position: fixed;
@@ -57,7 +75,7 @@
         justify-content: center;
     }
 
-    .allblogs h1{
+    .allblogs h1 {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 800;
     }
@@ -68,6 +86,7 @@
         color: rgb(0, 0, 0);
         text-decoration: none
     }
+
     .text h5 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 15px;
