@@ -12,7 +12,7 @@ var logger = require('morgan');
 var db = require('./connection');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var chatRouter = require('./routes/chat');
+
 const hbs = require('express-handlebars');
 var app = express();
 var fileUpload = require('express-fileupload')
@@ -49,7 +49,7 @@ cloudinary.config({
 app.use(fileUpload());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/chat', chatRouter);
+
 
 
 // catch 404 and forward to error handler
