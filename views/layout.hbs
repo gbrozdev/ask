@@ -42,7 +42,12 @@
 
 
 
-
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">all questions</a>
+    <a href="#">all blogs</a>
+    <a href="#">admin login</a>
+  </div>
 
 
 
@@ -52,12 +57,14 @@
       <a href="/users/">
         <h4 class="head-ask">Ask..</h4>
       </a>
-
       <a href="/users/ask" class="btn signup-btn">Ask Now</a>
     </div>
   </div>
 
 
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+  </div>
 
   {{{body}}}
 
@@ -75,11 +82,107 @@
 
   <script src="//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js"></script>
 
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "200px";
+      document.getElementById("main").style.marginLeft = "200px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+  </script>
+
+  <style>
+    /* The sidebar menu */
+    .sidebar {
+      height: 100%;
+      /* 100% Full-height */
+      width: 0;
+      /* 0 width - change this with JavaScript */
+      position: fixed;
+      /* Stay in place */
+      z-index: 2;
+      /* Stay on top */
+      top: 0;
+      left: 0;
+      background-color: rgb(255, 255, 255);
+      /* Black*/
+      overflow-x: hidden;
+      /* Disable horizontal scroll */
+      padding-top: 20px;
+      /* Place content 60px from the top */
+      transition: 0.5s;
+      /* 0.5 second transition effect to slide in the sidebar */
+    }
+
+    /* The sidebar links */
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 15px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+
+    /* Position and style the close button (top right corner) */
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* The button used to open the sidebar */
+    .openbtn {
+      font-size: 22px;
+      cursor: pointer;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      padding: 5px 10px;
+      border: none;
+      position: fixed;
+      z-index: 1;
+      top: 12px;
+      left: 15px;
+    }
+
+    .openbtn:hover {
+      background-color: none important;
+      border: none;
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-left .5s;
+      /* If you want a transition effect */
+      padding: 20px;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+  </style>
+
   <style>
     .head-ask {
       color: linear-gradient(90deg,
           rgba(93, 12, 255, 1) 0%,
           rgba(155, 0, 250, 1) 100%);
+      margin-left: 30px;
     }
 
     .share-btn>a {

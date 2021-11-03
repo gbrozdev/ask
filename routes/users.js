@@ -28,21 +28,16 @@ router.get('/', async function (req, res) {
 
 
 
-router.get('/blog/:id', async (req, res) => {
-  let id = req.params.id
+router.get('/blog/:title', async (req, res) => {
+  let title = req.params.title
   let user =  await db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
-  let blog = await db.get().collection('blogs').findOne({ _id: ObjectId(id) })
+  let blog = await db.get().collection('blogs').findOne({ title:title})
   let blogs = await db.get().collection('blogs').find({"section":blog.section}).toArray()
   let allblogs = await db.get().collection('blogs').find().toArray()
   allblogs = allblogs.filter( x => !blogs.filter( y => y.section === x.section).length);
-  console.log(allblogs);
   res.render('blog', { blogs,user,blog,allblogs })
 })
 
-
-
-
- 
 
 
 router.get('/profile', async function (req, res) {
@@ -59,13 +54,19 @@ router.get('/ask', async function (req, res) {
   res.render('ask')
 });
 
+router.post('/ask', function (req, res) {
+  let ask = req.body
+  db.get().collection('asks').insertOne(ask).then((response)=>{
+    res.render('asked',{ask})
+  })
+});
+
 router.post('/newblog', async function (req, res) {
   let blogdata = req.body
   if (!blogdata.imgurl) {
     blogdata.imgurl = 'https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?cs=srgb&dl=pexels-asad-photo-maldives-3293148.jpg&fm=jpg'
   }
   db.get().collection('blogs').insertOne(blogdata).then((response)=>{
-    console.log(response.insertedId);
     let blog =blogdata;
     let user = db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
     res.render('blog',{blog,user})
