@@ -1,41 +1,16 @@
-<div class="ask">
-    <h1>Have any Doubt..?</h1>
-    <div class="dis">
-        <p>Do you have any doubts and want explanation..</p>
-        <p> you are in correct place..</p>
-        <p>ask your doubts here..</p>
-        <p>You get a detailed blog here.. with in 3 hour..</p>
-        <p> </p>
-    </div>
-    <a href="/users/ask" class="mid-ask btn">Ask your doubt here..</a>
-</div>
-
-
 <div class="container">
     <div class="row ">
         {{#each blogs}}
-        <div class="blog-div col-12 col-md-5 ">
-            <img class="blog-img" src="{{this.imgurl}}">
-            <div class="text">
-                <a href="/users/blog/{{this.title}}">
-                    <h5>{{this.title}}</h5>
-                </a>
-                {{!-- <a href="/section/{{this.section}}">
-                    <h6>{{this.section}}</h6>
-                </a> --}}
-                <div class="author">
-                    {{!-- <img src="/images/{{this.userid}}.jpg" alt="image"> --}}
-                    <a href="/users/profile">
-                        <h6 class="s"> {{this.name}}</h6>
-                    </a>
-                </div>
+        <div class="card" style="width: 100%;">
+            <img class="card-img-top blog-img" src="{{this.imgurl}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <a href="/users/blog/{{this.title}}" class="btn btn-primary">Read more</a>
             </div>
         </div>
         {{/each}}
-
     </div>
 </div>
-
 
 
 
@@ -43,224 +18,10 @@
     .auth-name {
         font-weight: 600;
     }
-</style>
-
-<style> 
-    @media only screen and (min-width: 601px) {
-        .mid-ask {
-            font-family: Arial, Helvetica, sans-serif;
-            height: 40px;
-            font-weight: 600;
-            background: linear-gradient(90deg,
-                    rgba(93, 12, 255, 1) 0%,
-                    rgba(155, 0, 250, 1) 100%);
-            color: white;
-            align-items: center;
-            display: flex;
-
-            
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .dis {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 10px;
-        }
-
-        .ask p {
-            color: rgb(88, 88, 88);
-            font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 10px;
-            align-self: center;
-            margin: 2px;
-            padding: 0;
-        }
-
-        .ask {
+        .card{
+            margin: 25px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-
-        .ask h1 {
-            color: rgba(93, 12, 255, 1);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-weight: 800;
-            font-size: 40px;
-            margin: 20px;
-        }
-
-        .container {
-            padding: 0;
-        }
-
-        .text h6 {
-            color: rgb(0, 170, 0);
-            font-weight: 600;
-            font-size: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        a,
-        a:hover {
-            text-decoration: none;
-        }
-
-        .author {
-            display: flex;
-            align-items: center;
-            margin-top: 5px;
-        }
-
-        .author img {
-            border-radius: 100px;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-
-        .text h4 {
-            font-size: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: rgb(0, 0, 0)
-        }
-
-        .text p {
-            font-family: cursive;
-            font-size: 10px;
-            color: rgb(0, 0, 0);
-            margin-top: 10px;
-        }
-
-        .text h5 {
-            font-family: 'Noto Sans Malayalam', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: black;
-        }
-
-        .text {
-            width: 70%;
-        }
-
-        .row {
-            align-items: center;
-        }
-
-        .blog-div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            width: 30vw;
-            height: 18%;
-            padding: 15px;
-            background-color: rgb(235, 235, 235);
-            margin-left: 3vw;
-            margin-right: 2vw;
-            border-radius: 0.5rem;
-        }
-
-        .blog-img {
-            width: 30%;
-            height: 15vh;
-            border-radius: 0.5rem;
-            object-fit: cover;
-            margin-right: 5%;
-        }
-
-
-
-
-        .home {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 1rem;
-            width: 100%;
-            height: 65vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .home h4 {
-            font-family: 'Noto Sans Malayalam', sans-serif;
-            font-size: 20px;
-            margin: 5px;
-            font-weight: 600;
-        }
-
-        .homeimg {
-            width: 80%;
-            height: 50vh;
-            border-radius: 0.7rem;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-    }
-</style>
-
-
-<style>
-    @media only screen and (max-width: 600px) {
-        .mid-ask {
-            font-family: Arial, Helvetica, sans-serif;
-            height: 40px;
-            font-weight: 600;
-            background: linear-gradient(90deg,
-                    rgba(93, 12, 255, 1) 0%,
-                    rgba(155, 0, 250, 1) 100%);
-            color: white;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        .dis {
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            margin: 10px;
-        }
-
-        .ask p {
-            color: rgb(88, 88, 88);
-            font-weight: 600;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 10px;
-            align-self: center;
-            margin: 2px;
-            padding: 0;
-        }
-
-        .ask {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .ask h1 {
-            color: rgba(93, 12, 255, 1);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-weight: 800;
-            font-size: 36px;
-            margin: 10px;
-            margin-top: 30px;
-        }
-
         .container {
             padding: 0;
         }
@@ -337,11 +98,9 @@
         }
 
         .blog-img {
-            width: 30%;
-            height: 12vh;
-            border-radius: 0.5rem;
+            width: 100%;
+            height: 30vh;
             object-fit: cover;
-            margin-right: 5%;
         }
 
         .bot-div {
