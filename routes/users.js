@@ -32,8 +32,11 @@ router.get('/blog/:id', async (req, res) => {
   let id = req.params.id
   let user =  await db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
   let blog = await db.get().collection('blogs').findOne({ _id: ObjectId(id) })
-  let blogs = await db.get().collection('blogs').find().toArray()
-  res.render('blog', { blogs,user,blog })
+  let blogs = await db.get().collection('blogs').find({"section":blog.section}).toArray()
+  let allblogs = await db.get().collection('blogs').find().toArray()
+  allblogs = allblogs.filter( x => !blogs.filter( y => y.section === x.section).length);
+  console.log(allblogs);
+  res.render('blog', { blogs,user,blog,allblogs })
 })
 
 

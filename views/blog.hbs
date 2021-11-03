@@ -37,8 +37,30 @@
         </div>
         {{/each}}
     </div>
-</div>
 
+    <div class="row">
+        {{#each allblogs}} 
+        <div class="blog-div col-12 col-md-5 ">
+            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="text">
+                <a href="/users/blog/{{this._id}}">
+                    <h5>{{this.title}}</h5>
+                </a>
+                {{!-- <a href="/section/{{this.section}}">
+                    <h6>{{this.section}}</h6>
+                </a> --}}
+                <div class="author">
+                    {{!-- <img src="/images/{{this.userid}}.jpg" alt="image"> --}}
+                    <a href="/users/profile/{{this.userid}}">
+                        <h5 style="color: rgb(155, 155, 155);"> {{this.name}}</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+   
 
 <style>
     a,
