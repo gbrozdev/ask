@@ -44,16 +44,19 @@
 
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">all questions</a>
-    <a href="#">all blogs</a>
-    <a href="#">admin login</a>
+    <a href="/allasks">all questions</a>
+    <a href="/users/profile">all blogs</a>
+    <a href="/admin">admin login</a>
   </div>
 
 
 
 
   <div class="nav">
-    <div class="top-div">
+    <div class="top-div row">
+
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+
       <a href="/users/">
         <h4 class="head-ask">Ask..</h4>
       </a>
@@ -62,9 +65,6 @@
   </div>
 
 
-  <div id="main">
-    <button class="openbtn" onclick="openNav()">&#9776;</button>
-  </div>
 
   {{{body}}}
 
@@ -77,7 +77,6 @@
   </div> --}}
 
   <div class="bottom-div">
-    <a style="color: black;" href="/admin">admin</a>
   </div>
 
   <script src="//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js"></script>
@@ -147,12 +146,10 @@
       color: rgb(0, 0, 0);
       padding: 5px 10px;
       border: none;
-      position: fixed;
       z-index: 1;
-      top: 12px;
-      left: 15px;
+      margin-left: 20px;
+      margin-bottom: 3px;
     }
-
     .openbtn:hover {
       background-color: none important;
       border: none;
@@ -162,7 +159,6 @@
     #main {
       transition: margin-left .5s;
       /* If you want a transition effect */
-      padding: 20px;
     }
 
     /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -182,7 +178,7 @@
       color: linear-gradient(90deg,
           rgba(93, 12, 255, 1) 0%,
           rgba(155, 0, 250, 1) 100%);
-      margin-left: 30px;
+      margin-left: 10px;
     }
 
     .share-btn>a {
@@ -273,6 +269,7 @@
       width: 100%;
       height: 70px;
       background-color: white;
+    }
   </style>
 
 
