@@ -69,7 +69,7 @@ router.post('/ask', function (req, res) {
 router.post('/newblog', async function (req, res) {
   let blogdata = req.body
   if (!blogdata.imgurl) {
-    blogdata.imgurl = 'https://images.pexels.com/photos/3293148/pexels-photo-3293148.jpeg?cs=srgb&dl=pexels-asad-photo-maldives-3293148.jpg&fm=jpg'
+    blogdata.imgurl = 'https://images.pexels.com/photos/5965857/pexels-photo-5965857.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
   }
   db.get().collection('blogs').insertOne(blogdata).then((response)=>{
     let blog =blogdata;
