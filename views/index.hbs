@@ -1,13 +1,14 @@
 <div class="container">
     <div class="row ">
         {{#each blogs}}
+        <a href="/users/blog/{{this.title}}" class="card-link">
         <div class="card" style="width: 100%;">
             <img class="card-img-top blog-img" src="{{this.imgurl}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <a href="/users/blog/{{this.title}}" class="btn btn-primary">Read more</a>
+                <h5 href="/users/blog/{{this.title}}" class="card-title">{{this.title}}</h5>
             </div>
         </div>
+        </a>
         {{/each}}
     </div>
 </div>
@@ -15,6 +16,9 @@
 
 
 <style>
+    .card-link{
+        color: black!important;
+    }
     .auth-name {
         font-weight: 600;
     }
@@ -99,7 +103,7 @@
 
         .blog-img {
             width: 100%;
-            height: 30vh;
+            height: 20vh;
             object-fit: cover;
         }
 
