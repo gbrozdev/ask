@@ -54,6 +54,11 @@ router.get('/newblog', async function (req, res) {
   let user = await db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
   res.render('newblog', { user })
 });
+
+router.get('/ask', async function (req, res) {
+  res.render('ask')
+});
+
 router.post('/newblog', async function (req, res) {
   let blogdata = req.body
   if (!blogdata.imgurl) {
