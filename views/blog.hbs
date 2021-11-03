@@ -4,16 +4,18 @@
     </a>
     <img class="mainblog-img" src="{{blog.imgurl}}">
     <h1>{{blog.title}}</h1>
+    
     <a href="/users/profile/{{blog.userid}}">
         <h2> <span>by</span> {{blog.name}}</h2>
     </a>
+
+    <div class="addthis_inline_share_toolbox_rvwo"></div>
+
     <p>{{blog.blog}}</p>
     <a class="insta btn btn-primary" href="{{blog.instalink}}">
         <h4>{{blog.button}}</h4>
     </a>
 </div>
-
-
 
 <div class="container">
     <div class="row">
@@ -39,7 +41,7 @@
     </div>
 
     <div class="row">
-        {{#each allblogs}} 
+        {{#each allblogs}}
         <div class="blog-div col-12 col-md-5 ">
             <img class="blog-img" src="{{this.imgurl}}">
             <div class="text">
@@ -60,9 +62,12 @@
         {{/each}}
     </div>
 </div>
-   
+
 
 <style>
+    .addthis_inline_share_toolbox_rvwo{
+        margin-top: 5px;
+    }
     a,
     a:hover {
         text-decoration: none;
