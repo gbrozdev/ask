@@ -105,7 +105,9 @@ router.post('/edit/', async function (req, res) {
   db.get().collection('blogs').updateOne(myquery,newvalues).then((resp)=>{
     console.log(resp);
   })
-  res.redirect('/users/myprofile')
+  let blog =blogdata;
+  let user = db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
+  res.render('blog',{blog,user})
 
 });
 
