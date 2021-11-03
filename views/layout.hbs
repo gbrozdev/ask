@@ -55,7 +55,7 @@
   <div class="nav">
     <div class="top-div row">
 
-        <button class="openbtn" onclick="openNav()">&#9776;</button>
+      <button class="openbtn" onclick="openNav()">&#9776;</button>
 
       <a href="/users/">
         <h4 class="head-ask">Ask..</h4>
@@ -68,19 +68,12 @@
 
   {{{body}}}
 
-  {{!-- <div class="share-btn">
-    <a class="btn-vk" data-id="vk">VK</a>
-    <a class="btn-facebook" data-id="fb">Facebook</a>
-    <a class="btn-twitter" data-id="tw">Twitter</a>
-    <a class="btn-telegram" data-id="tg">Telegram</a>
-    <a class="btn-mail" data-id="mail">EMail</a>
-  </div> --}}
 
   <div class="bottom-div">
   </div>
-
   <script src="//cdn.jsdelivr.net/npm/share-buttons/dist/share-buttons.js"></script>
-
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6183c2e0af307014"></script>
   <script>
     /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
     function openNav() {
@@ -150,6 +143,7 @@
       margin-left: 20px;
       margin-bottom: 3px;
     }
+
     .openbtn:hover {
       background-color: none important;
       border: none;
@@ -178,7 +172,7 @@
       color: linear-gradient(90deg,
           rgba(93, 12, 255, 1) 0%,
           rgba(155, 0, 250, 1) 100%);
-      margin-left: 10px;
+      margin-left: 20px;
     }
 
     .share-btn>a {
