@@ -13,6 +13,11 @@ router.get('/about', function (req, res) {
   res.render('about');
 });
 
+router.get('/allasks', async function (req, res) {
+  let asks = await db.get().collection('asks').find().toArray()
+  res.render('allasks',{asks});
+});
+
 router.post('/upload', function (req, res) {
   let data = req.body
   console.log(data);

@@ -1,5 +1,17 @@
 <div class="container">
     {{#each asks}}
-    
+    <div class="card" style="width: 100%;">
+        <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.gmail}}</h6>
+            <p class="card-text">{{this.question}}</p>
+        </div>
+    </div>
     {{/each}}
 </div>
+
+<style>
+    .card{
+        margin: 10px;
+    }
+</style>
