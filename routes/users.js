@@ -38,8 +38,10 @@ router.get('/blog/:title', async (req, res) => {
     allblogs = allblogs.filter( x => !blogs.filter( y => y.section === x.section).length);
     res.render('blog', { blogs,user,blog,allblogs })
   }else{
-    console.log('section illa thyrr');
-    res.redirect('/')
+    let user =  await db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
+    var blogs = await db.get().collection('blogs').find({"section":blog.section}).toArray()
+    res.render('blog',{blogs,user})
+
   }
 })
 
