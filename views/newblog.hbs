@@ -14,15 +14,21 @@
         </div>
 
         <div class="form-group">
-
+            <label for="exampleInputEmail1">Content</label>
             <textarea id="text-input" oninput="this.editor.update()" class="form-control" name="blog" cols="30" rows="10"
                 placeholder="Write your blog here.....">{{#if blog}}{{blog.blog}}{{else}}{{/if}}</textarea>
 
                 <br/>
             <div id="preview"> </div>
                 <br/>
-
         </div>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Discription</label>
+            <textarea class="form-control" name="desc" cols="30" rows="3"
+                placeholder="small discription.....">{{#if blog}}{{blog.disc}}{{else}}{{/if}}</textarea>
+        </div>
+        
         <input type="text" hidden class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             name="userid" value="{{user._id}}" placeholder="Enter title....">
 
