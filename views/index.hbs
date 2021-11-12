@@ -3,7 +3,7 @@
         {{#each blogs}}
         <div class="card" style="width: 100%;">
             <img class="card-img-top blog-img" src="{{this.imgurl}}" alt="Card image cap">
-           <a class="card-link" href="/users/blog/{{this.title}}">
+           <a class="card-link" href="/users/blog/{{this.blogno}}/{{this.title}}">
             <div class="card-body">
                 <h5 class="card-title">{{this.title}}</h5>
             </div>
@@ -12,7 +12,6 @@
         {{/each}}
     </div>
 </div>
-
 
 
 <style>

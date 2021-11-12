@@ -11,7 +11,10 @@
 
     <div class="addthis_inline_share_toolbox_rvwo"></div>
 
-    <p>{{blog.blog}}</p> 
+<textarea id="text-input" oninput="this.editor.update()" hidden>{{blog.blog}}</textarea>
+
+    <div id="preview"></div>
+    
     <a class="insta btn btn-primary" href="{{blog.instalink}}">
         <h4>{{blog.button}}</h4>
     </a>
@@ -23,7 +26,7 @@
         <div class="blog-div col-12 col-md-5 ">
             <img class="blog-img" src="{{this.imgurl}}">
             <div class="text">
-                <a href="/users/blog/{{this.title}}">
+                <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
                 </a>
                 {{!-- <a href="/section/{{this.section}}">
@@ -45,7 +48,7 @@
         <div class="blog-div col-12 col-md-5 ">
             <img class="blog-img" src="{{this.imgurl}}">
             <div class="text">
-                <a href="/users/blog/{{this.title}}">
+                <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
                 </a>
                 {{!-- <a href="/section/{{this.section}}">
@@ -64,7 +67,34 @@
 </div>
 
 
+<script src="/javascripts/markdown.js"></script>
+<script>
+    function Editor(input, preview) {
+        this.update = function () {
+            preview.innerHTML = markdown.toHTML(input.value);
+        };
+        input.editor = this;
+        this.update();
+    }
+    var $ = function (id) { return document.getElementById(id); };
+    new Editor($("text-input"), $("preview"));
+</script>
+
+
 <style>
+    #preview{
+        margin-top: 20px;
+        font-weight: normal;
+        font-family: Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 22px;
+        background-color: #fff;
+        color: #000;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+    #preview a{
+        color: blue;
+    }
     .addthis_inline_share_toolbox_rvwo{
         margin-top: 5px;
     }

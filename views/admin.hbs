@@ -11,11 +11,11 @@
         <div class="blog-div">
             <img class="admin-img" src="{{this.imgurl}}" alt="image">
             <div class="text">
-                <a href="/users/blog/{{this.title}}">
+                <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
                 </a>
-                <a style="font-weight: 600; color:green" href="/users/edit/{{this._id}}">Edit</a>
-                <a style="margin-left: 5px; font-weight: 600; color: red;" href="/delete/{{this._id}}">Delete</a>
+                <a style="font-weight: 600; color:green" href="/users/edit/{{this.blogno}}/{{this.title}}">Edit</a>
+                <a style="margin-left: 5px; font-weight: 600; color: red;" href="users/delete/{{this.blogno}}/{{this.title}}">Delete</a>
             </div>
         </div>
         {{/each}}

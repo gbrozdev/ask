@@ -6,7 +6,7 @@ var ObjectId = require('mongodb').ObjectId
 /* GET home page. */
 router.get('/', async function (req, res) {
   let blogs = await db.get().collection('blogs').find().toArray()
-  res.render('index', { blogs });
+  res.render('index',{blogs});
 });
 
 router.get('/about', function (req, res) {
