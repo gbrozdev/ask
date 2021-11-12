@@ -2,29 +2,109 @@
 <html lang="en">
 
 <head>
-<!-- COMMON TAGS -->
-<meta charset="utf-8">
-<title>College-Help</title>
-<!-- Search Engine -->
-<meta name="description" content="{{blog.title}}">
-<meta name="image" content="{{blog.imgurl}}">
-<!-- Schema.org for Google -->
-<meta itemprop="name" content="blogname">
-<meta itemprop="description" content="blog-dis">
-<meta itemprop="image" content="image-link">
-<!-- Open Graph general (Facebook, Pinterest & LinkedIn) -->
-<meta property="og:title" content="{{blog.title}}">
-<meta property="og:description" content="blog-discription">
-<meta property="og:image" content="{{blog.imgurl}}">
-<meta property="og:url" content="http://college-help.herokuapp.com/">
-<meta property="og:site_name" content="College-Help">
-<meta property="og:locale" content="en_US">
-<meta property="og:type" content="website">
-<!-- Twitter -->
-<meta property="twitter:card" content="summary">
-<meta property="twitter:title" content="blogname">
-<meta property="twitter:description" content="blog-dis">
-<meta property="twitter:image:src" content="image-link">
+<style>
+  /* The sidebar menu */
+  .sidebar {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 2;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 40px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidebar */
+  }
+
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 22px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: none;
+    z-index: 1;
+    margin-left: 20px;
+    margin-bottom: 3px;
+  }
+
+  .openbtn:hover {
+    background-color: none important;
+    border: none;
+  }
+
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    /* If you want a transition effect */
+  }
+
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+</style>
+
+
+  <!-- COMMON TAGS -->
+  <meta charset="utf-8">
+  <title>{{blog.title}}</title>
+  <!-- Search Engine -->
+  <meta name="description" content="{{blog.title}}">
+  <meta name="image" content="{{blog.imgurl}}">
+  <!-- Schema.org for Google -->
+  <meta itemprop="name" content="blogname">
+  <meta itemprop="description" content="blog-dis">
+  <meta itemprop="image" content="image-link">
+  <!-- Open Graph general (Facebook, Pinterest & LinkedIn) -->
+  <meta property="og:title" content="{{blog.title}}">
+  <meta property="og:description" content="blog-discription">
+  <meta property="og:image" content="{{blog.imgurl}}">
+  <meta property="og:url" content="http://college-help.herokuapp.com/">
+  <meta property="og:site_name" content="College-Help">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="blogname">
+  <meta property="twitter:description" content="blog-dis">
+  <meta property="twitter:image:src" content="image-link">
   {{!-- adsbygoogle --}}
   <script data-ad-client="ca-pub-1044322610224848" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -51,6 +131,8 @@
   integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCB39KBWPW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -114,84 +196,7 @@
     }
   </script>
 
-  <style>
-    /* The sidebar menu */
-    .sidebar {
-      height: 100%;
-      /* 100% Full-height */
-      width: 0;
-      /* 0 width - change this with JavaScript */
-      position: fixed;
-      /* Stay in place */
-      z-index: 2;
-      /* Stay on top */
-      top: 0;
-      left: 0;
-      background-color: rgb(255, 255, 255);
-      /* Black*/
-      overflow-x: hidden;
-      /* Disable horizontal scroll */
-      padding-top: 40px;
-      /* Place content 60px from the top */
-      transition: 0.5s;
-      /* 0.5 second transition effect to slide in the sidebar */
-    }
 
-    /* The sidebar links */
-    .sidebar a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 15px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-
-    /* Position and style the close button (top right corner) */
-    .sidebar .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
-    /* The button used to open the sidebar */
-    .openbtn {
-      font-size: 22px;
-      cursor: pointer;
-      background-color: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
-      padding: 5px 10px;
-      border: none;
-      z-index: 1;
-      margin-left: 20px;
-      margin-bottom: 3px;
-    }
-
-    .openbtn:hover {
-      background-color: none important;
-      border: none;
-    }
-
-    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-    #main {
-      transition: margin-left .5s;
-      /* If you want a transition effect */
-    }
-
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-      .sidebar {
-        padding-top: 15px;
-      }
-
-      .sidebar a {
-        font-size: 18px;
-      }
-    }
-  </style>
 
   <style>
     .head-ask {
