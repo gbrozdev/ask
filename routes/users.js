@@ -5,6 +5,20 @@ var fun = require('../functions')
 var ObjectId = require('mongodb').ObjectId
 var markdown = require( "markdown" ).markdown;
 
+function toSeoUrl(url) {
+  return url.toString()               // Convert to string
+      .normalize('NFD')               // Change diacritics
+      .replace(/[\u0300-\u036f]/g,'') // Remove illegal characters
+      .replace(/\s+/g,'-')            // Change whitespace to dashes
+      .toLowerCase()                  // Change to lowercase
+      .replace(/&/g,'-and-')          // Replace ampersand
+      .replace(/[^a-z0-9\-]/g,'')     // Remove anything that is not a letter, number or dash
+      .replace(/-+/g,'-')             // Remove duplicate dashes
+      .replace(/^-*/,'')              // Remove starting dashes
+      .replace(/-*$/,'');             // Remove trailing dashes
+}
+
+
 
 /* GET users listing. */
 // const requiredlogin = (req,res)=>{
@@ -76,8 +90,10 @@ router.post('/ask', function (req, res) {
 router.post('/newblog', async function (req, res) {
   let blogs = await db.get().collection('blogs').find().toArray()
   let blogdata = req.body
+  let titlechange = blogdata.title
+  let titleurl = toSeoUrl(titlechange)
+  blogdata.titleurl = titleurl
   blogdata.blogno = blogs.length+1
-console.log(blogdata.blogno);
   if (!blogdata.imgurl) {
     blogdata.imgurl = 'https://images.pexels.com/photos/5965857/pexels-photo-5965857.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
   }
