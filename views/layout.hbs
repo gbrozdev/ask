@@ -2,85 +2,184 @@
 <html lang="en">
 
 <head>
-  
-<style>
-  /* The sidebar menu */
-  .sidebar {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
-    position: fixed;
-    /* Stay in place */
-    z-index: 2;
-    /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-    /* Black*/
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 40px;
-    /* Place content 60px from the top */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidebar */
-  }
 
-  /* The sidebar links */
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-
-
-  /* Position and style the close button (top right corner) */
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-
-  /* The button used to open the sidebar */
-  .openbtn {
-    font-size: 22px;
-    cursor: pointer;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    padding: 5px 10px;
-    border: none;
-    z-index: 1;
-    margin-left: 20px;
-    margin-bottom: 3px;
-  }
-
-  .openbtn:hover {
-    background-color: none important;
-    border: none;
-  }
-
-  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-  #main {
-    transition: margin-left .5s;
-    /* If you want a transition effect */
-  }
-
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+  <style>
+    /* The sidebar menu */
     .sidebar {
-      padding-top: 15px;
+      height: 100%;
+      /* 100% Full-height */
+      width: 0;
+      /* 0 width - change this with JavaScript */
+      position: fixed;
+      /* Stay in place */
+      z-index: 2;
+      /* Stay on top */
+      top: 0;
+      left: 0;
+      background-color: rgb(255, 255, 255);
+      /* Black*/
+      overflow-x: hidden;
+      /* Disable horizontal scroll */
+      padding-top: 40px;
+      /* Place content 60px from the top */
+      transition: 0.5s;
+      /* 0.5 second transition effect to slide in the sidebar */
     }
 
+    /* The sidebar links */
     .sidebar a {
-      font-size: 18px;
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 15px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
     }
-  }
-</style>
+
+
+    /* Position and style the close button (top right corner) */
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* The button used to open the sidebar */
+    .openbtn {
+      font-size: 22px;
+      cursor: pointer;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      padding: 5px 10px;
+      border: none;
+      z-index: 1;
+      margin-left: 20px;
+      margin-bottom: 3px;
+    }
+
+    .openbtn:hover {
+      background-color: none important;
+      border: none;
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+      transition: margin-left .5s;
+      /* If you want a transition effect */
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+      .sidebar {
+        padding-top: 15px;
+      }
+
+      .sidebar a {
+        font-size: 18px;
+      }
+    }
+  </style>
+  <style>
+    .head-ask {
+      color: linear-gradient(90deg,
+          rgba(93, 12, 255, 1) 0%,
+          rgba(155, 0, 250, 1) 100%);
+      margin-left: 5px;
+    }
+
+    .share-btn>a {
+      border: 1px solid #ccc;
+      padding: 5px;
+      font-size: 12px;
+      font-family: Verdana, Arial;
+    }
+
+    .share-btn>a:hover {
+      cursor: pointer;
+    }
+
+    .tags a {
+      margin-left: 10px;
+      font-weight: 600;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: green;
+    }
+
+    .bottom-div {
+      height: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .signup-btn:hover {
+      text-decoration: none;
+      color: white !important;
+    }
+
+    .top-div img {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      border-radius: 100px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .signup-btn {
+      position: absolute;
+      font-family: Arial, Helvetica, sans-serif;
+      top: 15px;
+      right: 10px;
+      height: 40px;
+      font-weight: 600;
+      background: linear-gradient(90deg,
+          rgba(93, 12, 255, 1) 0%,
+          rgba(155, 0, 250, 1) 100%);
+      color: white;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-btn {
+      position: absolute;
+      top: 15px;
+      right: 25%;
+      width: 5%;
+      height: 40px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #000000;
+      border: none;
+      -webkit-transition: width 0.4s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+
+    .top-div h4 {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: 900;
+      color: #000000;
+      padding: 20px;
+      padding-left: 5%;
+    }
+
+    .top-div {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 70px;
+      background-color: white;
+    }
+  </style>
+
 
   <!-- COMMON TAGS -->
   <meta charset="utf-8">
@@ -197,105 +296,6 @@
   </script>
 
 
-
-  <style>
-    .head-ask {
-      color: linear-gradient(90deg,
-          rgba(93, 12, 255, 1) 0%,
-          rgba(155, 0, 250, 1) 100%);
-      margin-left: 5px;
-    }
-
-    .share-btn>a {
-      border: 1px solid #ccc;
-      padding: 5px;
-      font-size: 12px;
-      font-family: Verdana, Arial;
-    }
-
-    .share-btn>a:hover {
-      cursor: pointer;
-    }
-
-    .tags a {
-      margin-left: 10px;
-      font-weight: 600;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: green;
-    }
-
-    .bottom-div {
-      height: 5%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      bottom: 0;
-    }
-
-    .signup-btn:hover {
-      text-decoration: none;
-      color: white !important;
-    }
-
-    .top-div img {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      border-radius: 100px;
-      width: 40px;
-      height: 40px;
-    }
-
-    .signup-btn {
-      position: absolute;
-      font-family: Arial, Helvetica, sans-serif;
-      top: 15px;
-      right: 10px;
-      height: 40px;
-      font-weight: 600;
-      background: linear-gradient(90deg,
-          rgba(93, 12, 255, 1) 0%,
-          rgba(155, 0, 250, 1) 100%);
-      color: white;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
-
-    .search-btn {
-      position: absolute;
-      top: 15px;
-      right: 25%;
-      width: 5%;
-      height: 40px;
-      font-weight: 600;
-      font-size: 16px;
-      color: #000000;
-      border: none;
-      -webkit-transition: width 0.4s ease-in-out;
-      transition: width 0.4s ease-in-out;
-    }
-
-    .top-div h4 {
-      font-family: 'Source Sans Pro', sans-serif;
-      font-weight: 900;
-      color: #000000;
-      padding: 20px;
-      padding-left: 5%;
-    }
-
-    .top-div {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      height: 70px;
-      background-color: white;
-    }
-  </style>
 
 
 

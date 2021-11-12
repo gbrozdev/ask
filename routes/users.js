@@ -41,7 +41,6 @@ router.get('/', async function (req, res) {
   } else {
     res.redirect('/')
   }
-
 });
 
 
