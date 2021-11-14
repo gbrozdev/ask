@@ -19,7 +19,9 @@
     <div class="row">
         {{#each blogs}}
         <div class="blog-div col-12 col-md-5 ">
-            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="banner-text blog-img">
+                <h4 class="ban-txt">{{this.small}}</h4>
+            </div>
             <div class="text">
                 <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
@@ -40,186 +42,197 @@
 
 
 <style>
-        .container {
-            padding: 0;
-        }
+    .banner-text {
+        background: linear-gradient(90deg,
+                rgb(40, 0, 119) 0%,
+                rgb(63, 0, 102) 100%);
+        color: white;
+        padding-left: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-        .username {
-            align-self: center;
-            font-size: 22px;
-            color: rgb(0, 167, 0);
-            font-weight: 600;
-            margin-left: 10px;
-            margin-bottom: 10px;
-        }
+    .container {
+        padding: 0;
+    }
 
-        .text h6 {
-            color: rgb(155, 155, 155);
-            font-weight: 600;
-            font-size: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    .username {
+        align-self: center;
+        font-size: 22px;
+        color: rgb(0, 167, 0);
+        font-weight: 600;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
 
-        .contain {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }
+    .text h6 {
+        color: rgb(155, 155, 155);
+        font-weight: 600;
+        font-size: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-        .home {
-            margin-top: 20px;
-            padding: 10px;
-            padding-left: 20px;
-            border: black solid 3px;
-            border-radius: 1rem;
-            width: 100%;
-            height: 35vh;
-        }
+    .contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
 
-        .home img {
-            width: 140px;
-            height: 140px;
-            border-radius: 100px;
-            object-fit: cover;
-            position: absolute;
-            top: 24%;
-            right: 12%;
-        }
+    .home {
+        margin-top: 20px;
+        padding: 10px;
+        padding-left: 20px;
+        border: black solid 3px;
+        border-radius: 1rem;
+        width: 100%;
+        height: 35vh;
+    }
 
-        .home p {
-            margin-bottom: 10px;
-        }
+    .home img {
+        width: 140px;
+        height: 140px;
+        border-radius: 100px;
+        object-fit: cover;
+        position: absolute;
+        top: 24%;
+        right: 12%;
+    }
+
+    .home p {
+        margin-bottom: 10px;
+    }
 
 
-        .edit {
-            margin-left: 10px;
-        }
+    .edit {
+        margin-left: 10px;
+    }
 
-        .name {
-            align-items: center;
-        }
+    .name {
+        align-items: center;
+    }
 
-        .about {
-            margin-top: 15px;
-            align-items: center;
-        }
+    .about {
+        margin-top: 15px;
+        align-items: center;
+    }
 
-        .about-input {
-            font-size: 12px;
-            width: 35%;
-        }
+    .about-input {
+        font-size: 12px;
+        width: 35%;
+    }
 
-        textarea {
-            text-decoration: none;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            width: 35%;
-            margin-left: 10px;
-            color: antiquewhite;
-            font-family: cursive;
-            font-size: 20px;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-            resize: none;
-        }
+    textarea {
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 35%;
+        margin-left: 10px;
+        color: antiquewhite;
+        font-family: cursive;
+        font-size: 20px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        resize: none;
+    }
 
-        input {
-            text-decoration: none;
-            background-color: transparent;
-            border: none;
-            outline: none;
-            width: 35%;
-            margin-left: 10px;
-            color: antiquewhite;
-            font-family: cursive;
-            font-size: 20px;
-        }
+    input {
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 35%;
+        margin-left: 10px;
+        color: antiquewhite;
+        font-family: cursive;
+        font-size: 20px;
+    }
 
-        .edit h1 {
-            font-size: 25px;
-            font-family: cursive;
-            color: rgb(95, 95, 95);
-            margin: 5px;
-        }
+    .edit h1 {
+        font-size: 25px;
+        font-family: cursive;
+        color: rgb(95, 95, 95);
+        margin: 5px;
+    }
 
-        .edit h2 {
-            font-size: 20px;
-            font-family: cursive;
-            color: rgb(95, 95, 95);
-            margin: 5px;
-        }
+    .edit h2 {
+        font-size: 20px;
+        font-family: cursive;
+        color: rgb(95, 95, 95);
+        margin: 5px;
+    }
 
-        a,
-        a:hover {
-            text-decoration: none;
-            color: white;
-            text-decoration: none
-        }
+    a,
+    a:hover {
+        text-decoration: none;
+        color: white;
+        text-decoration: none
+    }
 
-        .author {
-            display: flex;
-            align-items: center;
-            margin-top: 5px;
-        }
+    .author {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
 
-        .author img {
-            border-radius: 100px;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            object-fit: cover;
-        }
+    .author img {
+        border-radius: 100px;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        object-fit: cover;
+    }
 
-        .text h4 {
-            font-size: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: rgb(0, 0, 0)
-        }
+    .text h4 {
+        font-size: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(0, 0, 0)
+    }
 
-        .text p {
-            font-family: cursive;
-            font-size: 10px;
-            color: rgb(0, 0, 0);
-            margin-top: 10px;
-        }
+    .text p {
+        font-family: cursive;
+        font-size: 10px;
+        color: rgb(0, 0, 0);
+        margin-top: 10px;
+    }
 
-        .text h5 {
-            font-family: 'Noto Sans Malayalam', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            color: black;
-        }
+    .text h5 {
+        font-family: 'Noto Sans Malayalam', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+    }
 
-        .text {
-            width: 70%;
-        }
+    .text {
+        width: 70%;
+    }
 
-        .row {
-            align-items: center;
-        }
+    .row {
+        align-items: center;
+    }
 
-        .blog-div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 0px;
-            width: 100%;
-            height: 18%;
-            padding: 10px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 0.5rem;
-        }
+    .blog-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        width: 100%;
+        height: 18%;
+        padding: 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0.5rem;
+    }
 
-        .blog-img {
-            width: 30%;
-            height: 12vh;
-            border-radius: 0.5rem;
-            object-fit: cover;
-            margin-right: 5%;
-        }
-
+    .blog-img {
+        width: 30%;
+        height: 12vh;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        margin-right: 5%;
+    }
 </style>

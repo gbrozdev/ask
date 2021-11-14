@@ -2,7 +2,12 @@
     <a href="/section/{{blog.section}}">
         <h6 class="tag-top">{{blog.section}}</h6>
     </a>
-    <img class="mainblog-img" src="{{blog.imgurl}}">
+    <div class="banner-text mainblog-img">
+        <h3 class="ban-txt">{{blog.text1}}</h3>
+        <h6 class="ban-txt2">{{blog.text2}}</h6>
+        <br />
+        <p class="ban-txt">college-help.com</p>
+    </div>
     <h1>{{blog.title}}</h1>
 
     <a href="/users/profile/{{blog.userid}}">
@@ -25,7 +30,9 @@
     <div class="row">
         {{#each blogs}}
         <div class="blog-div col-12 col-md-5 ">
-            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="banner-text blog-img">
+                <h3 class="ban-txt">{{this.small}}</h3>
+            </div>
             <div class="text">
                 <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
@@ -49,7 +56,9 @@
     <div class="row">
         {{#each allblogs}}
         <div class="blog-div col-12 col-md-5 ">
-            <img class="blog-img" src="{{this.imgurl}}">
+            <div class="banner-text blog-img">
+                <h3 class="ban-txt">{{this.small}}</h3>
+            </div>
             <div class="text">
                 <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
@@ -89,6 +98,33 @@
 
 
 <style>
+    .smallban-txt1{
+        font-size: 25px;
+    }
+    .ban-txt2 {
+        color: rgb(221, 221, 221);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .ban-txt {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+
+    .banner-text {
+        background: linear-gradient(90deg,
+                rgb(40, 0, 119) 0%,
+                rgb(63, 0, 102) 100%);
+        color: white;
+        padding-left: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     #preview {
         margin-top: 20px;
         font-weight: normal;
@@ -193,17 +229,6 @@
         color: #ff0000;
         margin-top: 10px;
         margin-bottom: 5px;
-    }
-
-    .blog p {
-        margin-top: 20px;
-        font-weight: normal;
-        font-family: Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 22px;
-        background-color: #fff;
-        color: #000;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
     }
 
     .author {

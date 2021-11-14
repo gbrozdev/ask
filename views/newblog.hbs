@@ -15,20 +15,20 @@
 
         <div class="form-group">
             <label for="exampleInputEmail1">Content</label>
-            <textarea id="text-input" oninput="this.editor.update()" class="form-control" name="blog" cols="30" rows="10"
-                placeholder="Write your blog here.....">{{#if blog}}{{blog.blog}}{{else}}{{/if}}</textarea>
+            <textarea id="text-input" oninput="this.editor.update()" class="form-control" name="blog" cols="30"
+                rows="10" placeholder="Write your blog here.....">{{#if blog}}{{blog.blog}}{{else}}{{/if}}</textarea>
 
-                <br/>
+            <br />
             <div id="preview"> </div>
-                <br/>
+            <br />
         </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1">Discription</label>
             <textarea class="form-control" name="desc" cols="30" rows="3"
-                placeholder="small discription.....">{{#if blog}}{{blog.disc}}{{else}}{{/if}}</textarea>
+                placeholder="small discription.....">{{#if blog}}{{blog.desc}}{{else}}{{/if}}</textarea>
         </div>
-        
+
         <input type="text" hidden class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
             name="userid" value="{{user._id}}" placeholder="Enter title....">
 
@@ -36,9 +36,16 @@
         <input type="text" value="{{blog._id}}" hidden name="blogid">
         {{/if}}
 
-        <label for="exampleInputEmail1">Image url</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="imgurl"
-            placeholder="Paste image link here...." value="{{#if blog}}{{blog.imgurl}}{{else}}{{/if}}">
+        
+        <div class="insta">
+        <label for="exampleInputEmail1">Image Data</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="small"
+            placeholder="Bca" value="{{#if blog}}{{blog.small}}{{else}}{{/if}}">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="text1"
+            placeholder="Bca Question Papper" value="{{#if blog}}{{blog.text1}}{{else}}{{/if}}">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="text2"
+            placeholder="Calicut University - 1st Semeseter" value="{{#if blog}}{{blog.text2}}{{else}}{{/if}}">
+        </div>
 
         <div>
             <div class="insta">

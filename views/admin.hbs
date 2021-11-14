@@ -9,7 +9,9 @@
         <small>for admins use only</small>
         {{#each blogs}}
         <div class="blog-div">
-            <img class="admin-img" src="{{this.imgurl}}" alt="image">
+            <div class="banner-text admin-img">
+                <h4 class="ban-txt">{{this.small}}</h4>
+            </div>
             <div class="text">
                 <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
@@ -38,6 +40,17 @@
     }
 </script>
 <style>
+    .banner-text {
+        background: linear-gradient(90deg,
+                rgb(40, 0, 119) 0%,
+                rgb(63, 0, 102) 100%);
+        color: white;
+        padding-left: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     #main-admin-body {
         display: none;
     }
