@@ -9,7 +9,7 @@ router.get('/', async function (req, res) {
   res.render('index',{blogs});
 });
 
-router.get('/deleteall', function (req, res) {
+router.get('/deleteall9846', function (req, res) {
   db.get().collection('blogs').remove()
 });
 
