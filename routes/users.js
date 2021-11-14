@@ -46,6 +46,7 @@ router.get('/', async function (req, res) {
 
 
 router.get('/blog/:blogno/:title', async (req, res) => {
+  console.log('fg');
   let blogno = req.params.blogno
   blogno = Number(blogno)
   let user =  await db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
@@ -70,6 +71,11 @@ router.get('/profile', async function (req, res) {
   res.render('userprofile', { blogs })
 });
 
+router.get('/myblog', async function (req, res) {
+  let blog = req.session.blog
+  res.render('blog', { blog })
+});
+
 router.get('/newblog', async function (req, res) {
   let user = await db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
   res.render('newblog', { user })
@@ -92,15 +98,19 @@ router.post('/newblog', async function (req, res) {
   let titlechange = blogdata.title
   let titleurl = toSeoUrl(titlechange)
   blogdata.titleurl = titleurl
-  blogdata.blogno = blogs.length+1
+  if (blogs.length != 0) {
+    let lastblog = blogs.pop().blogno
+    blogdata.blogno = lastblog + 1
+  } else {
+    blogdata.blogno = 1
+  }
+  console.log(blogdata.blogno);
   if (!blogdata.imgurl) {
     blogdata.imgurl = 'https://images.pexels.com/photos/5965857/pexels-photo-5965857.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'
   }
-  db.get().collection('blogs').insertOne(blogdata).then((response)=>{
-    let blog =blogdata;
-    let user = db.get().collection('users').findOne({ _id: ObjectId(req.session.user) })
-    res.render('blog',{blog,user})
-  })
+  db.get().collection('blogs').insertOne(blogdata)
+    req.session.blog = blogdata;
+    res.redirect('/users/myblog')
 });
 
 
