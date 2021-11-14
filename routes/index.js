@@ -9,8 +9,8 @@ router.get('/', async function (req, res) {
   res.render('index',{blogs});
 });
 
-router.get('/about', function (req, res) {
-  res.render('about');
+router.get('/deleteall', function (req, res) {
+  db.get().collection('blogs').remove()
 });
 
 router.get('/allasks', async function (req, res) {
