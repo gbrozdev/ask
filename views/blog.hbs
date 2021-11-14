@@ -12,8 +12,9 @@
     <div class="addthis_inline_share_toolbox_9rmo mt-2 mr-2"></div>
 
     <textarea id="text-input" oninput="this.editor.update()" hidden>{{blog.blog}}</textarea>
-
-    <div id="preview"></div>
+    <article>
+        <div id="preview"></div>
+    </article>
 
     <a class="insta btn btn-primary" href="{{blog.instalink}}">
         <h4>{{blog.button}}</h4>
@@ -29,9 +30,11 @@
                 <a href="/users/blog/{{this.blogno}}/{{this.title}}">
                     <h5>{{this.title}}</h5>
                 </a>
+
                 {{!-- <a href="/section/{{this.section}}">
                     <h6>{{this.section}}</h6>
                 </a> --}}
+
                 <div class="author">
                     {{!-- <img src="/images/{{this.userid}}.jpg" alt="image"> --}}
                     <a href="/users/profile/{{this.userid}}">
@@ -68,6 +71,7 @@
 
 
 <script src="/javascripts/markdown.js"></script>
+
 <script>
     function Editor(input, preview) {
         this.update = function () {
