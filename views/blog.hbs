@@ -4,17 +4,17 @@
     </a>
     <img class="mainblog-img" src="{{blog.imgurl}}">
     <h1>{{blog.title}}</h1>
-    
+
     <a href="/users/profile/{{blog.userid}}">
-        <h2> <span>by</span> {{blog.name}}</h2> 
+        <h2> <span>by</span> {{blog.name}}</h2>
     </a>
 
-    <div class="addthis_inline_share_toolbox_rvwo"></div>
+    <div class="addthis_inline_share_toolbox_9rmo mt-2 mr-2"></div>
 
-<textarea id="text-input" oninput="this.editor.update()" hidden>{{blog.blog}}</textarea>
+    <textarea id="text-input" oninput="this.editor.update()" hidden>{{blog.blog}}</textarea>
 
     <div id="preview"></div>
-    
+
     <a class="insta btn btn-primary" href="{{blog.instalink}}">
         <h4>{{blog.button}}</h4>
     </a>
@@ -80,9 +80,12 @@
     new Editor($("text-input"), $("preview"));
 </script>
 
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6190a0f95cf99ef2"></script>
+
 
 <style>
-    #preview{
+    #preview {
         margin-top: 20px;
         font-weight: normal;
         font-family: Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -92,12 +95,15 @@
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
     }
-    #preview a{
+
+    #preview a {
         color: blue;
     }
-    .addthis_inline_share_toolbox_rvwo{
+
+    .addthis_inline_share_toolbox_rvwo {
         margin-top: 5px;
     }
+
     a,
     a:hover {
         text-decoration: none;
